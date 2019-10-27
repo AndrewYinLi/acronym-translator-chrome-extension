@@ -24,7 +24,7 @@ function loadDict() {
             lines = lines.split("\n");
             for (var i = 0; i < lines.length; i++) {
                 lineSplit = lines[i].split(" : ");
-                newDict.set(lineSplit[0], lineSplit[1]);
+                dict.set(lineSplit[0], lineSplit[1]);
             }
             resolve(true);
         });
