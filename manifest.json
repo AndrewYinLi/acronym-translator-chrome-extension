@@ -1,6 +1,6 @@
 {
     "manifest_version": 2,
-    "name": "Acronym Translator",
+    "name": "Acronym Translate",
     "version": "0.2",
     "content_scripts": [
         {
@@ -10,11 +10,15 @@
             "js": ["jquery-3.4.1.min.js","content.js"]
         }
     ],
+    "permissions": [
+        "contextMenus"
+    ],
     "background": {
         "scripts": ["background.js"]
     },
     "browser_action": {
         "default_icon": "icon.png",
+        "default_title": "Acronym Translate",
         "default_popup": "popup.html"
     }
 }
