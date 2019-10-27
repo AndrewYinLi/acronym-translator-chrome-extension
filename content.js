@@ -1,1 +1,1 @@
-// alert("Hello from your Chrome extension!")
+// To-do: dynamic, real-time translations uwu
