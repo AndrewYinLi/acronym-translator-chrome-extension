@@ -22,7 +22,7 @@ function acronymTranslate(info){
         var definition = pair[acronym];
         if (definition != null) { // Definition exists
             alert("Translation:\n\"" + definition + "\".");
-        } else if(acronym.split(" ").length > 1) { // Multiple words selected
+        } else if (acronym.split(" ").length > 1) { // Multiple words selected
             alert("Multiple words were selected. Please select a single acronym.")
         } else if (confirm("The selected acronym is not in the dictionary. Add to dictionary?")) { // Definition doesn't exist, prompt user on adding to dictionary
             setNewDefinition(acronym);
@@ -43,13 +43,12 @@ function addAcronymToDict(info){
             if (confirm("The selected acronym is already in the dictionary as \"" + definition + "\". Overwrite dictionary definition?")) {
                 setNewDefinition(acronym);
             }
-        } else if(acronym.split(" ").length > 1) { // Multiple words selected
+        } else if (acronym.split(" ").length > 1) { // Multiple words selected
             alert("Multiple words were selected. Please select a single acronym.")
         } else { // Definition doesn't exist, add to dictionary
            setNewDefinition(acronym);
         }
     });
-   
 }
 
 function main() {
