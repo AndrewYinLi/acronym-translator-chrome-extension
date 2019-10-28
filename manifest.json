@@ -1,7 +1,7 @@
 {
     "manifest_version": 2,
     "name": "Acronym Translate",
-    "version": "0.2",
+    "version": "0.1",
     "content_scripts": [
         {
             "matches": [
