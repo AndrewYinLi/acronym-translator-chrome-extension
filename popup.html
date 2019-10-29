@@ -1,16 +1,17 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" type="text/css" href="popup.css"> 
+        <link rel="stylesheet" type="text/css" href="popup.css">
+        
     </head>
     <body>
+        <p>Dictionary:</p>
+        <select id="dict_listbox" size="10" multiple="multiple"></select>
+        <button type="button" id="addToDictButton">Add</button>
+        <button type="button" id="delFromDictButton">Delete</button>
+        <hr />
         <p>Feel free to contribute to this open source project!</p>
         <p><a href="https://github.com/AndrewYinLi/acronym-translate-chrome-extension">Link to GitHub repository</a></p>
-        <p><a href="mailto:andrewli@live.com">Contact (andrewli@live.com)</a></p>
-        <hr />
-        <select id="dict_listbox" size="10" multiple="multiple">
-           
-        </select>  
-        <script type="module" src="popup.js"></script>
     </body>
+    <script src="popup.js"></script>
 </html>

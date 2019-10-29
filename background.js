@@ -1,10 +1,8 @@
 /**
  * Prompts user to set a new definition (val) for an acronym (key)
  * @param   {string} acronym    the acronym (key) to map the new definition (val) to
- * 
  */
 function setNewDefinition(acronym){
-   
     newDefinition = prompt("Input definition for \"" + acronym + "\":","");
     if (newDefinition != null && newDefinition != "") {
         chrome.storage.sync.set({[acronym]:newDefinition});
