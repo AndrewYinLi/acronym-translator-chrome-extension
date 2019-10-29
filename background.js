@@ -50,7 +50,6 @@ function addAcronymToDict(info){
 }
 
 function main() {
-
     // Create context menu
     // Documentation: https://developer.chrome.com/apps/contextMenus
     chrome.contextMenus.create({ // Parent menu

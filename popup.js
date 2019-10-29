@@ -1,5 +1,6 @@
 /**
- * Populates acronym dictionary listbox onload 'body' in 'popup.html'
+ * Populates acronym dictionary listbox 'dict_listbox' 
+ * Called onload 'body' in 'popup.html'
  */
 function populateListbox(){
     var listbox = document.getElementById("dict_listbox");
@@ -15,7 +16,8 @@ function populateListbox(){
 }
 
 /**
- * 
+ * Adds acronym to acronym dictionary listbox 'dict_listbox'
+ * Called onclick 'addToDictButton' button
  */
 function addToDict(){
     var acronym = prompt("Input acronym:");
@@ -36,17 +38,27 @@ function addToDict(){
 }
 
 /**
- * 
+ * Deletes acronym from acronym dictionary listbox 'dict_listbox'
+ * Called onclick 'deleteFromDictButton' button
  */
 function delFromDict(){
-
+    var listbox = document.getElementById("dict_listbox");
+    for(var i = 0; i < listbox.length; i++){
+        if(listbox.options[i].selected){
+            var acronym = listbox.options[i].value.split(" : ")[0];
+            chrome.storage.sync.remove([acronym]);
+            listbox.remove(i);
+        }
+    }
 }
 
 function main(){
-    // Listener for calling 'populateListbox()' onload of 'body' element
+    // Listener for onload of body element in 'popup.html', calls 'populateListbox()' 
     document.getElementsByTagName("body")[0].addEventListener("load", populateListbox(), false);
-    // Listener for 'addToDict()' onclick for button id 'addtoDictButton' 
+    // Listener for onclick for button id 'addtoDictButton', calls 'addToDict()' 
     document.getElementById("addToDictButton").addEventListener("click", addToDict);
+    // Listener for onclick for button id 'delFromDictButton', calls 'delFromDict()' 
+    document.getElementById("delFromDictButton").addEventListener("click", delFromDict);
 }
 
 main()
